@@ -1,0 +1,58 @@
+/* Design Token —— 所有数值只允许出自本文件；页面其他地方不得出现裸数值。 */
+:root {
+  /* 色板：低饱和蓝灰舞台 + 琥珀强调（禁紫粉渐变，仅用纯色） */
+  --color-page-bg: #12161f;
+  --color-stage-bg: #171c26;
+  --color-surface: #1e2530;
+  --color-border: #2a3342;
+  --color-text-primary: #e8eaee;
+  --color-text-secondary: #9aa3b2;
+  --color-accent: #e0a458;
+  --color-floor-line: #3a4456;
+  --color-marker: #4a5468;
+  --color-tag-bg: rgba(14, 18, 26, 0.82);
+  --color-tag-text-on-accent: #171c26;
+  --color-btn-bg: #1e2530;
+  --color-btn-hover-border: #e0a458;
+  --color-dialogue-bg: rgba(14, 18, 26, 0.88);
+
+  /* 字体 */
+  --font-family-base: "Noto Sans SC", "Microsoft YaHei", "PingFang SC", system-ui, sans-serif;
+  --font-size-title: 18px;
+  --font-size-body: 14px;
+  --font-size-caption: 12px;
+
+  /* 间距 */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+
+  /* 舞台与立绘规格 */
+  --stage-floor-inset: 28px;        /* 地面线距舞台底部 */
+  --stage-height-ratio: 0.78;       /* 立绘高度占舞台高度 */
+  --marker-size: 8px;               /* 站位标记点直径 */
+  --sprite-enter-offset: 24px;      /* 进场位移起点 */
+
+  /* 站位（由 .pos-* 类引用，内容层不得写死） */
+  --sprite-position-left: 24%;
+  --sprite-position-center: 50%;
+  --sprite-position-right: 76%;
+
+  /* 动效 */
+  --motion-duration-enter: 360ms;
+  --motion-duration-move: 420ms;
+  --motion-duration-crossfade: 240ms;
+  --motion-duration-dim: 240ms;
+  --motion-duration-exit: 300ms;
+  --motion-ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+
+  /* 层级 */
+  --z-stage-floor: 2;
+  --z-stage-markers: 3;
+  --z-stage-sprites: 10;
+  --z-sprite-tag: 12;
+  --z-dialogue: 20;
+}

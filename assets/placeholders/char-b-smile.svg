@@ -1,0 +1,15 @@
+<!-- 占位素材（几何剪影），非成品；正式立绘必须真实来源并标注作者 ID -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 900" width="600" height="900">
+<path d="M 186 300 Q 186 150 300 148 Q 414 150 414 300 L 420 705 Q 418 722 400 722 L 200 722 Q 182 722 180 705 Z" fill="#4a3428"/>
+<rect x="272" y="395" width="56" height="95" rx="12" fill="#dcc4a0"/>
+<path d="M 118 900 L 118 645 Q 118 545 208 508 L 258 486 L 342 486 L 392 508 Q 482 545 482 645 L 482 900 Z" fill="#4e6e64"/>
+<path d="M 262 500 L 300 556 L 338 500 L 320 490 L 300 522 L 280 490 Z" fill="#7aa5b8"/>
+<ellipse cx="196" cy="318" rx="14" ry="20" fill="#dcc4a0"/>
+<ellipse cx="404" cy="318" rx="14" ry="20" fill="#dcc4a0"/>
+<ellipse cx="300" cy="305" rx="100" ry="112" fill="#dcc4a0"/>
+<path d="M 196 318 Q 192 168 300 164 Q 408 168 404 318 Q 396 258 352 240 Q 318 272 254 250 Q 210 248 196 318 Z" fill="#4a3428"/>
+
+<path d="M 242 312 Q 253 296 264 312" fill="none" stroke="#2b2b33" stroke-width="7" stroke-linecap="round"/><path d="M 336 312 Q 347 296 358 312" fill="none" stroke="#2b2b33" stroke-width="7" stroke-linecap="round"/>
+<path d="M 278 364 Q 300 386 322 364" fill="none" stroke="#2b2b33" stroke-width="7" stroke-linecap="round"/>
+<text x="138" y="864" font-family="sans-serif" font-size="26" fill="rgba(232,234,238,0.5)">占位素材 PLACEHOLDER</text>
+</svg>

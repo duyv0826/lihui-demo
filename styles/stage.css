@@ -1,0 +1,246 @@
+/* 舞台与控件样式 —— 只引用 tokens.css 中的变量。 */
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--color-page-bg);
+  color: var(--color-text-primary);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-body);
+}
+
+/* 页头 */
+.page-header {
+  padding: var(--space-6) var(--space-8) var(--space-4);
+  border-bottom: 1px solid var(--color-border);
+}
+.page-title {
+  margin: 0 0 var(--space-2);
+  font-size: var(--font-size-title);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+.page-note {
+  margin: 0;
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-caption);
+}
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-6);
+  padding: var(--space-6) var(--space-8) var(--space-8);
+}
+
+/* 舞台 */
+.stage {
+  position: relative;
+  width: min(920px, 100%);
+  aspect-ratio: 16 / 9;
+  background: var(--color-stage-bg);
+  background-size: cover;
+  background-position: center bottom;
+  border: 1px solid var(--color-border);
+  overflow: hidden;
+}
+.stage-floor {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: var(--stage-floor-inset);
+  height: 2px;
+  background: var(--color-floor-line);
+  z-index: var(--z-stage-floor);
+}
+
+/* 站位标记（与立绘共用 .pos-* 位置类） */
+.stage-markers {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: var(--z-stage-markers);
+}
+.stage-marker {
+  position: absolute;
+  bottom: var(--space-1);
+  transform: translateX(-50%);
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-caption);
+  line-height: 1;
+  text-align: center;
+}
+.stage-marker::before {
+  content: "";
+  display: block;
+  width: var(--marker-size);
+  height: var(--marker-size);
+  margin: 0 auto var(--space-1);
+  border-radius: 50%;
+  background: var(--color-marker);
+}
+.pos-left   { left: var(--sprite-position-left); }
+.pos-center { left: var(--sprite-position-center); }
+.pos-right  { left: var(--sprite-position-right); }
+
+/* 立绘 */
+.stage-sprites {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: var(--z-stage-sprites);
+}
+.sprite {
+  position: absolute;
+  bottom: var(--stage-floor-inset);
+  height: calc(var(--stage-height-ratio) * 100%);
+  transform: translateX(-50%);
+  transition: left var(--motion-duration-move) var(--motion-ease-out);
+}
+.sprite-body {
+  height: 100%;
+  opacity: 0;
+  transform: translateY(var(--sprite-enter-offset));
+  transition:
+    opacity var(--motion-duration-enter) var(--motion-ease-out),
+    transform var(--motion-duration-enter) var(--motion-ease-out),
+    filter var(--motion-duration-dim) ease;
+}
+.sprite.is-onstage .sprite-body {
+  opacity: 1;
+  transform: translateY(0);
+}
+.sprite.is-dimmed .sprite-body {
+  filter: brightness(0.4) saturate(0.6);
+}
+
+.sprite-layers { position: relative; height: 100%; }
+.face-layer {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 100%;
+  width: auto;
+  opacity: 0;
+  transition: opacity var(--motion-duration-crossfade) ease;
+}
+.face-layer.is-active { opacity: 1; }
+
+/* 名牌：焦点说话时用角色强调色点亮 */
+.sprite-tag {
+  position: absolute;
+  bottom: var(--space-2);
+  left: 50%;
+  transform: translateX(-50%);
+  padding: var(--space-1) var(--space-2);
+  background: var(--color-tag-bg);
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-caption);
+  line-height: 1.2;
+  white-space: nowrap;
+  border-left: 3px solid var(--char-accent, var(--color-accent));
+  opacity: 0;
+  transition: opacity var(--motion-duration-crossfade) ease;
+  z-index: var(--z-sprite-tag);
+}
+.sprite.is-onstage .sprite-tag { opacity: 1; }
+.sprite.is-speaking .sprite-tag {
+  background: var(--char-accent, var(--color-accent));
+  color: var(--color-tag-text-on-accent);
+  font-weight: 600;
+}
+
+/* 对话框：说话人名字用角色强调色 */
+.dialogue {
+  position: absolute;
+  left: var(--space-6);
+  right: var(--space-6);
+  bottom: var(--space-6);
+  padding: var(--space-3) var(--space-4);
+  background: var(--color-dialogue-bg);
+  border: 1px solid var(--color-border);
+  border-left: 3px solid var(--char-accent, var(--color-accent));
+  opacity: 0;
+  transform: translateY(var(--space-2));
+  transition:
+    opacity var(--motion-duration-crossfade) ease,
+    transform var(--motion-duration-crossfade) ease;
+  pointer-events: none;
+  z-index: var(--z-dialogue);
+}
+.dialogue.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.dialogue-speaker {
+  margin-bottom: var(--space-1);
+  font-size: var(--font-size-caption);
+  font-weight: 600;
+  color: var(--char-accent, var(--color-accent));
+}
+.dialogue-text {
+  font-size: var(--font-size-body);
+  color: var(--color-text-primary);
+  line-height: 1.6;
+}
+
+/* 控制面板 */
+.panel {
+  width: min(920px, 100%);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  padding: var(--space-4);
+}
+.control-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) 0;
+  border-bottom: 1px solid var(--color-border);
+}
+[data-global-panel] { border-bottom: none; }
+.control-name {
+  min-width: 64px;
+  font-weight: 600;
+  border-left: 3px solid var(--char-accent, var(--color-accent));
+  padding-left: var(--space-2);
+}
+.control-btn {
+  font: inherit;
+  color: var(--color-text-primary);
+  background: var(--color-btn-bg);
+  border: 1px solid var(--color-border);
+  padding: var(--space-1) var(--space-3);
+  cursor: pointer;
+  transition:
+    border-color var(--motion-duration-crossfade) ease,
+    color var(--motion-duration-crossfade) ease;
+}
+.control-btn:hover {
+  border-color: var(--color-btn-hover-border);
+  color: var(--color-accent);
+}
+.control-btn.is-small {
+  font-size: var(--font-size-caption);
+  padding: var(--space-1) var(--space-2);
+}
+
+.action-log {
+  margin: var(--space-3) 0 0;
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-caption);
+}
+.action-log-label {
+  margin-right: var(--space-2);
+  color: var(--color-accent);
+}
+
+/* 素材署名栏：正式立绘接入后由注册表 credit 驱动显示 */
+.credits {
+  margin: var(--space-2) 0 0;
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-caption);
+}

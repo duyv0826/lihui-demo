@@ -1,0 +1,15 @@
+<!-- 占位素材（几何剪影），非成品；正式立绘必须真实来源并标注作者 ID -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 900" width="600" height="900">
+<ellipse cx="300" cy="295" rx="113" ry="122" fill="#2e3440"/><rect x="187" y="290" width="34" height="90" rx="16" fill="#2e3440"/><rect x="379" y="290" width="34" height="90" rx="16" fill="#2e3440"/>
+<rect x="272" y="395" width="56" height="95" rx="12" fill="#e6cfae"/>
+<path d="M 118 900 L 118 645 Q 118 545 208 508 L 258 486 L 342 486 L 392 508 Q 482 545 482 645 L 482 900 Z" fill="#3f5d7a"/>
+<path d="M 262 500 L 300 556 L 338 500 L 320 490 L 300 522 L 280 490 Z" fill="#e0a458"/>
+<ellipse cx="196" cy="318" rx="14" ry="20" fill="#e6cfae"/>
+<ellipse cx="404" cy="318" rx="14" ry="20" fill="#e6cfae"/>
+<ellipse cx="300" cy="305" rx="100" ry="112" fill="#e6cfae"/>
+<path d="M 196 318 Q 192 168 300 164 Q 408 168 404 318 Q 396 258 352 240 Q 318 272 254 250 Q 210 248 196 318 Z" fill="#2e3440"/>
+<rect x="236" y="268" width="34" height="7" rx="3.5" fill="#2b2b33"/><rect x="330" y="268" width="34" height="7" rx="3.5" fill="#2b2b33"/>
+<circle cx="253" cy="308" r="14" fill="#2b2b33"/><circle cx="347" cy="308" r="14" fill="#2b2b33"/>
+<ellipse cx="300" cy="377" rx="15" ry="19" fill="#7c3a38"/>
+<text x="138" y="864" font-family="sans-serif" font-size="26" fill="rgba(232,234,238,0.5)">占位素材 PLACEHOLDER</text>
+</svg>

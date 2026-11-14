@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>立绘舞台 · 演示</title>
+  <link rel="stylesheet" href="styles/tokens.css?v=10">
+  <link rel="stylesheet" href="styles/stage.css?v=10">
+</head>
+<body>
+  <header class="page-header">
+    <h1 class="page-title">立绘舞台系统</h1>
+    <p class="page-note">立绘素材来自真实画师（Mokurou. 手绘 ×2 / HachiStudio），授权与来源见页面底部署名栏与 assets/sprites/LICENSES.md。</p>
+  </header>
+
+  <main class="layout">
+    <section class="stage" aria-label="立绘舞台">
+      <div class="stage-markers" data-stage-markers></div>
+      <div class="stage-sprites" data-stage-sprites></div>
+      <div class="stage-floor"></div>
+      <div class="dialogue" data-dialogue>
+        <div class="dialogue-speaker" data-dialogue-speaker></div>
+        <div class="dialogue-text" data-dialogue-text></div>
+      </div>
+    </section>
+
+    <section class="panel" aria-label="演示控制">
+      <div data-control-panel></div>
+      <div data-script-choices></div>
+      <div class="control-row" data-global-panel></div>
+      <p class="action-log"><span class="action-log-label">最近动作</span><span data-action-log>（无）</span></p>
+      <p class="credits" data-credits></p>
+    </section>
+  </main>
+
+  <script src="config/characters.js?v=10" defer></script>
+  <script src="config/script.js?v=10" defer></script>
+  <script src="engine/stage.js?v=10" defer></script>
+  <script src="engine/script.js?v=10" defer></script>
+  <script src="main.js?v=10" defer></script>
+</body>
+</html>
