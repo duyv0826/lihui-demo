@@ -2,7 +2,7 @@
 
 配置驱动的视觉小说立绘舞台系统——剧本即配置，写完就能播。
 
-![演示](docs/screenshot-classroom.png)
+![演示](docs/screenshot-gym.png)
 
 ## 特性
 
